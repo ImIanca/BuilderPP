@@ -1,11 +1,11 @@
 package builder;
-import java.util.Calendar;
+import java.util.Date;
 public interface Boletos {
 
 	String getSacado () ;
 	String getCedente () ;
 	double getValor () ;
-	Calendar getVencimento () ;
+	Date getVencimento () ;
 	int getNossoNumero () ;
 	String toString () ;
 	

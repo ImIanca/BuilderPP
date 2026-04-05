@@ -1,5 +1,5 @@
 package builder;
-import java.util.Calendar;
+import java.util.Date;
 public class BoletoBradescoBuilder implements BoletoBuilder {
 
     private BoletoPadrao boleto;
@@ -27,7 +27,7 @@ public class BoletoBradescoBuilder implements BoletoBuilder {
     }
 
     @Override
-    public void buildVencimento(Calendar vencimento) {
+    public void buildVencimento(Date vencimento) {
         boleto.setVencimento(vencimento);
     }
 
@@ -64,11 +64,11 @@ public class BoletoBradescoBuilder implements BoletoBuilder {
         String nossoNumeroCompleto = numeroBase + dv;
 
       
-        boleto.setNossoNumero(Integer.parseInt(nossoNumeroCompleto));
+        boleto.setNossoNumero(nossoNumeroCompleto);
     }
 
     @Override
-    public Boleto getBoleto() {
+    public BoletoPadrao getBoleto() {
         return boleto;
     }
 }

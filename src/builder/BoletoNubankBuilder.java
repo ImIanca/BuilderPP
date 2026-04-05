@@ -1,11 +1,11 @@
 package builder;
-import java.util.Calendar;
-public class BoletoNubankBuilder {
+import java.util.Date;
+public class BoletoNubankBuilder implements BoletoBuilder {
 
-	 private BBBoletoBuilder boleto;
+	 private BoletoPadrao boleto;
 
 	    public BoletoNubankBuilder() {
-	        boleto = new BBBoletoBuilder();
+	        boleto = new BoletoPadrao();
 	    }
 
 	    @Override
@@ -25,7 +25,7 @@ public class BoletoNubankBuilder {
 	    }
 
 	    @Override
-	    public void buildVencimento(Calendar vencimento) {
+	    public void buildVencimento(Date vencimento) {
 	        boleto.setVencimento(vencimento);
 	    }
 
@@ -62,11 +62,11 @@ public class BoletoNubankBuilder {
 	        String nossoNumeroCompleto = numeroBase + dv;
 
 	        
-	        boleto.setNossoNumero(Integer.parseInt(nossoNumeroCompleto));
+	        boleto.setNossoNumero (nossoNumeroCompleto);
 	    }
 
 	    @Override
-	    public Boleto getBoleto() {
+	    public BoletoPadrao getBoleto() {
 	        return boleto;
 	    }
 	 }

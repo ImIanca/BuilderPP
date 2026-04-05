@@ -1,5 +1,5 @@
 package builder;
-import java.util.Calendar;
+import java.util.Date;
 public class GeradorDeBoleto {
 	
 	private BoletoBuilder boletoBuilder ;
@@ -8,21 +8,21 @@ public class GeradorDeBoleto {
 	this . boletoBuilder = boletoBuilder ;
 	}
 	
-	public Boletos geraBoleto () {
+	public BoletoPadrao geraBoleto (String sacado, String cedente, double valor) {
 
-	this . boletoBuilder . buildSacado (" Marcelo Martins ") ;
+	this . boletoBuilder . buildSacado (sacado) ;
 	
-	this . boletoBuilder . buildCedente (" K19 Treinamentos ") ;
+	this . boletoBuilder . buildCedente (cedente) ;
 	
-	this . boletoBuilder . buildValor (100.54) ;
+	this . boletoBuilder . buildValor (valor) ;
 	
-	Calendar vencimento = Calendar . getInstance () ;
-	vencimento . add ( Calendar . DATE , 30) ;
+	Date agora = new Date();
+	Date vencimento = new Date(agora.getTime() + 30L * 24 * 60 * 60 * 1000);
 	this . boletoBuilder . buildVencimento ( vencimento ) ;
 	
-	this . boletoBuilder . buildNossoNumero (1234) ;
+	this . boletoBuilder . buildNossoNumero () ;
 
-	Boletos boletos = boletoBuilder . getBoleto () ;
+	BoletoPadrao boletos = boletoBuilder . getBoleto () ;
 
 	return boletos ;
 	}
