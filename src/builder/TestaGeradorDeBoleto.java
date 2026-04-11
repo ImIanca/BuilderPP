@@ -13,7 +13,7 @@ public class TestaGeradorDeBoleto {
 		BoletoPadrao boletos2 = geradorDeBoleto2 . geraBoleto ("Pedro", "Caixa eletrônico", 1000) ;
 		System . out . println ( boletos2.toString() ) ;
 		
-		BoletoBuilder boletoBuilder3 = new BoletoUnibancoBuilder () ;
+		BoletoBuilder boletoBuilder3 = new BoletoItauBuilder () ;
 		GeradorDeBoleto geradorDeBoleto3 = new GeradorDeBoleto ( boletoBuilder3 ) ;
 		BoletoPadrao boletos3 = geradorDeBoleto3 . geraBoleto ("Ianca", "Banco Unibanco", 20) ;
 		System . out . println ( boletos3.toString() ) ;

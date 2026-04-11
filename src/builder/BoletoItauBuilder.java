@@ -1,10 +1,10 @@
 package builder;
 import java.util.Date;
-public class BoletoUnibancoBuilder implements BoletoBuilder {
+public class BoletoItauBuilder implements BoletoBuilder {
 
     private BoletoPadrao boleto;
 
-    public BoletoUnibancoBuilder() {
+    public BoletoItauBuilder() {
         boleto = new BoletoPadrao();
     }
 
@@ -34,7 +34,7 @@ public class BoletoUnibancoBuilder implements BoletoBuilder {
     @Override
     public void buildNossoNumero() {
 
-        // Código do banco (Itaú/Unibanco) = 341
+        // Código do banco (Itaú) = 341
         String banco = "341";
 
         
